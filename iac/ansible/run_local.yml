@@ -1,0 +1,17 @@
+---
+- name: Base installation
+  hosts: local
+  become: yes
+  roles:
+    - role: system
+    - role: docker
+  vars_files:
+    - ./vars/main.yml
+
+- name: Install and setup TODO app
+  hosts: todo:todo2
+  become: yes
+  roles:
+    - role: todo
+  vars_files:
+    - ./vars/main.yml

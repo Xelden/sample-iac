@@ -1,0 +1,14 @@
+- name: Create sshd config file
+  ansible.builtin.file:
+    path: /etc/ssh/sshd_config.d/20-force_publickey_auth.conf
+    state: touch
+
+- name: Disable SSH password authentication
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    line: PasswordAuthentication no 
+
+- name: Ensure SSH public key authentication
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    line: AuthenticationMethods publickey 

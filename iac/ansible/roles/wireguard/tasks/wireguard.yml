@@ -1,0 +1,18 @@
+- name: Create Wireguard volume directory
+  file:
+    path: "{{ homedir }}/volumes/wireguard"
+    state: directory
+
+- name: Copy docker-compose.yml
+  copy:
+    src: ../files/compose
+    dest: "{{ homedir }}"
+
+- name: Copy volumes
+  copy:
+    src: ../files/volumes
+    dest: "{{ homedir }}"
+
+- name: Run `docker-compose up`
+  community.docker.docker_compose:
+    project_src: "{{ homedir }}/compose/wireguard"

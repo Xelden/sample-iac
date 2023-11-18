@@ -1,0 +1,24 @@
+- name: Install Ansible
+  package:
+    name: ansible
+    state: latest
+
+- name: Copy Playbook
+  copy:
+    src: ../../../../ansible
+    dest: "{{ homedir }}"
+
+- name: Copy todo SSH key
+  copy:
+    src: ../../../../secrets/todo
+    dest: /secrets/
+
+- name: Copy todo2 SSH key
+  copy:
+    src: ../../../../secrets/todo2
+    dest: /secrets/
+
+- name: Copy update-todo.sh
+  copy:
+    src: ../files/update-todo.sh
+    dest: "{{ homedir }}"

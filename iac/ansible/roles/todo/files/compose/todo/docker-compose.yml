@@ -1,0 +1,7 @@
+services:
+  todo:
+   image: anpiz/todo
+   container_name: 'todo'
+   ports:
+     - 80:3000
+   restart: unless-stopped 

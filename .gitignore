@@ -1,0 +1,7 @@
+.terraform*
+terraform.tfstate*
+ToDo-list
+.direnv
+.envrc
+secrets
+variables.tf

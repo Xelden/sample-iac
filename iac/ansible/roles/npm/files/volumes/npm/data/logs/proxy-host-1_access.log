@@ -1,0 +1,2 @@
+[15/Nov/2023:13:41:50 +0000] - 200 200 - GET https todo.proyecto-ti.duckdns.org "/" [Client 10.0.1.5] [Length 727] [Gzip 1.93] [Sent-to 10.0.1.10] "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/119.0 Firefox/119.0" "http://10.0.1.4:81/"
+[15/Nov/2023:13:41:50 +0000] - 200 200 - GET https todo.proyecto-ti.duckdns.org "/style.css" [Client 10.0.1.5] [Length 3329] [Gzip -] [Sent-to 10.0.1.10] "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/119.0 Firefox/119.0" "https://todo.proyecto-ti.duckdns.org/"

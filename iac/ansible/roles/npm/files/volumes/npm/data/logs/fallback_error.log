@@ -1,0 +1,1 @@
+2023/11/15 13:31:34 [error] 165#165: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 186.168.182.1, server: nginxproxymanager, request: "GET /api/ HTTP/1.1", upstream: "http://127.0.0.1:3000/", host: "admin-proyectoti.chickenkiller.com:81", referrer: "http://admin-proyectoti.chickenkiller.com:81/"

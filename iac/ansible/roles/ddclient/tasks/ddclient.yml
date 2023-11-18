@@ -1,0 +1,26 @@
+- name: Install necessary packages
+  package:
+    name: "{{ packages }}"
+    state: latest
+
+- name: Copy ddclient.conf
+  copy:
+    src: ../files/ddclient.conf
+    dest: /etc/ddclient.conf
+
+- name: Update subdomain
+  lineinfile:
+    dest: /etc/ddclient.conf
+    regexp: "^proyectoti"
+    line: "{{ subdomain }}"
+
+- name: Restart ddclient daemon
+  ansible.builtin.service:
+    name: ddclient
+    state: restarted
+    enabled: true
+
+- name: Enable ddclient daemon on restart
+  systemd:
+    name: ddclient
+    enabled: true

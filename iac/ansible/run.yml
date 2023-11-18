@@ -1,0 +1,32 @@
+---
+- name: Base installation
+  hosts: base
+  become: yes
+  roles:
+    - role: system
+    - role: docker
+  vars_files:
+    - ./vars/main.yml
+
+- name: Install and setup VPN
+  hosts: vpn
+  become: yes
+  roles:
+    - role: ddclient
+    - role: wireguard
+  vars_files:
+    - ./vars/main.yml
+  vars:
+    subdomain: "proyectoti.chickenkiller.com"
+
+- name: Install and setup admin VM
+  hosts: admin
+  become: yes
+  roles:
+    - role: ddclient
+    - role: ansible
+    - role: npm
+  vars_files:
+    - ./vars/main.yml
+  vars:
+    subdomain: "admin-proyectoti.chickenkiller.com"

@@ -1,0 +1,7 @@
+packages:
+  - neovim
+  - btop
+  - tmux
+  - rsync
+  - python3
+  - python3-pip

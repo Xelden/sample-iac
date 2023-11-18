@@ -1,0 +1,10 @@
+[base]
+vpn ansible_host=172.206.204.0 ansible_user=azureuser ansible_connection=ssh ansible_ssh_private_key_file=../secrets/vpn
+admin ansible_host=172.206.204.1 ansible_user=azureuser ansible_connection=ssh ansible_ssh_private_key_file=../secrets/admin
+
+[local]
+todo ansible_host=10.0.1.6 ansible_user=azureuser ansible_connection=ssh ansible_ssh_private_key_file=/secrets/todo
+todo2 ansible_host=10.0.1.7 ansible_user=azureuser ansible_connection=ssh ansible_ssh_private_key_file=/secrets/todo2
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

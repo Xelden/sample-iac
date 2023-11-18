@@ -1,0 +1,8 @@
+- name: Copy docker-compose.yml
+  copy:
+    src: ../files/compose
+    dest: "{{ homedir }}"
+
+- name: Run `docker-compose up`
+  community.docker.docker_compose:
+    project_src: "{{ homedir }}/compose/todo"
